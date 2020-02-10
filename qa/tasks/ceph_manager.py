@@ -938,6 +938,8 @@ class Thrasher:
                                      check_status=False, timeout=30, stdout=DEVNULL)
                 self.ceph_manager.osd_admin_socket(osd, command=['dump_historic_ops'],
                                      check_status=False, timeout=30, stdout=DEVNULL)
+                self.ceph_manager.osd_admin_socket(osd, command=['dump_recovery_reservations'],
+                                     check_status=False, timeout=30, stdout=DEVNULL)
             gevent.sleep(0)
 
     @log_exc
